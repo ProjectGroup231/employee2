@@ -27,15 +27,14 @@ public class Employee {
 	private UUID id;
 	@Column(name = "name")
 	private String name;
-	
 
 	@Column(name = "post")
 	private String post;
-	
+
 	@Column(name = "add")
 	private String add;
-	
+
 	@Column(name = "salary")
 	private String salary;
-	
+
 }

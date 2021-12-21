@@ -10,11 +10,10 @@ import lombok.NoArgsConstructor;
 @Data
 
 public class EmployeeModel {
-   private UUID id;
-   private String name;
-   private String post;
-   private String add;
-   private Double salary;
-   
-   
+	private UUID id;
+	private String name;
+	private String post;
+	private String add;
+	private Double salary;
+
 }
