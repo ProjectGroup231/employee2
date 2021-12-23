@@ -35,6 +35,6 @@ public class Employee {
 	private String add;
 
 	@Column(name = "salary")
-	private String salary;
+	private Double salary;
 
 }
