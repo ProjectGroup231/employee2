@@ -40,6 +40,12 @@ public class EmployeeDomainImpl implements EmployeeDomain {
 		return empModelList;
 	}
 
+	@Override
+	public Employee updateEmployee(Employee employee) {
+		Employee employee1 = empRepo.save(employee);
+		return employee1;
+	}
+
 		
 	
 

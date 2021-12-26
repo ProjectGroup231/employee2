@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.project.employee.Service.EmployeeService;
+import com.project.employee.entities.Employee;
 import com.project.employee.model.EmployeeModel;
 //abc
 @RestController
@@ -27,7 +28,13 @@ public class EmployeeController {
 	
 	@RequestMapping(value = "/findall", method = RequestMethod.GET)
 	public List<EmployeeModel> findAllEmployee(){
-		List<EmployeeModel> response = empService.findAllEmployee();
+		List<EmployeeModel> response  =empService.findAllEmployee();
 		return response;
+}
+	@RequestMapping(value ="/update", method = RequestMethod.PUT)
+	public Employee updateEmployee(@RequestBody Employee employee) {
+		Employee response = empService.updateEmployee(employee);
+		return response;
+		
 	}
 }
