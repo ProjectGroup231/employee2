@@ -1,8 +1,10 @@
 package com.project.employee.controller;
 
 import java.util.List;
+import java.util.UUID;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -31,6 +33,12 @@ public class EmployeeController {
 		List<EmployeeModel> response  =empService.findAllEmployee();
 		return response;
 }
+	 @RequestMapping(value = "/emp/{id}",method = RequestMethod.DELETE)
+	   public Employee deleteEmployee(@PathVariable UUID id) {
+		   Employee employee = empService.deleteEmployee(id);
+		   return  employee;
+	   }
+	  
 	@RequestMapping(value ="/update", method = RequestMethod.PUT)
 	public Employee updateEmployee(@RequestBody Employee employee) {
 		Employee response = empService.updateEmployee(employee);

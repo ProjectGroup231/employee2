@@ -1,6 +1,7 @@
 package com.project.employee.serviceImpl;
 //
 import java.util.List;
+import java.util.UUID;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -27,6 +28,12 @@ public class EmployeeServiceImpl implements EmployeeService {
 		List<EmployeeModel> empList=empDomain.findAllEmployee();
 		return empList;
 	}
+	@Override
+	public Employee deleteEmployee(UUID id) {
+		 Employee employee1 = empDomain.deleteEmployee(id);
+		return  employee1;
+	}
+
 	@Override
 	public Employee updateEmployee(Employee employee) {
 		 Employee employees = empDomain.updateEmployee(employee);

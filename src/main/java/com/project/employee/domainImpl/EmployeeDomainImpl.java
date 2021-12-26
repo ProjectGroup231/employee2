@@ -2,6 +2,7 @@ package com.project.employee.domainImpl;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.UUID;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
@@ -38,6 +39,12 @@ public class EmployeeDomainImpl implements EmployeeDomain {
 			empModelList.add(new EmployeeModel(emp.getId(), emp.getName(), emp.getAdd(), emp.getPost(),emp.getSalary()));
 		}
 		return empModelList;
+	}
+	@Override
+	public Employee deleteEmployee(UUID id) {
+		 Employee employee = empRepo.findById(id).get();
+		empRepo.deleteById(id);
+		return employee;
 	}
 
 	@Override
