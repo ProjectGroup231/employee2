@@ -28,11 +28,20 @@ public class EmployeeController {
 		return response;
 	}
 	
+	@RequestMapping(value = "/emp/{id}",method = RequestMethod.GET)
+	public Employee oneEmploye(@PathVariable UUID id) {
+		Employee response = empService.oneEmployee(id);
+		return response;
+		
+	}
+	
 	@RequestMapping(value = "/findall", method = RequestMethod.GET)
 	public List<EmployeeModel> findAllEmployee(){
 		List<EmployeeModel> response  =empService.findAllEmployee();
 		return response;
 }
+	
+	
 	 @RequestMapping(value = "/emp/{id}",method = RequestMethod.DELETE)
 	   public Employee deleteEmployee(@PathVariable UUID id) {
 		   Employee employee = empService.deleteEmployee(id);
@@ -45,4 +54,5 @@ public class EmployeeController {
 		return response;
 		
 	}
+	
 }

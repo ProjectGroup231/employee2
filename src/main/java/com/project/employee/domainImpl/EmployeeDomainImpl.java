@@ -62,6 +62,12 @@ public class EmployeeDomainImpl implements EmployeeDomain {
 		return "updated successfully";
 	}
 
+	@Override
+	public Employee oneEmployee(UUID id) {
+		Employee employee = empRepo.findById(id).get();
+		return employee;
+	}
+
 		
 	
 

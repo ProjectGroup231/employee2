@@ -39,5 +39,10 @@ public class EmployeeServiceImpl implements EmployeeService {
 		String employees = empDomain.updateEmployee(employeeModel, id);
 		return employees;
 	}
+	@Override
+	public Employee oneEmployee(UUID id) {
+		Employee employee = empDomain.oneEmployee(id);
+		return employee;
+	}
 
 }

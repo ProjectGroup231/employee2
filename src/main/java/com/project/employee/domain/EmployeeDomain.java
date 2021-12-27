@@ -8,7 +8,9 @@ import com.project.employee.entities.Employee;
 import com.project.employee.model.EmployeeModel;
 
 public interface EmployeeDomain {
-
+ 
+	Employee oneEmployee(UUID id); 
+	
 	String addEmployee(EmployeeModel employeeModel);
 
 	List<EmployeeModel> findAllEmployee();
