@@ -35,8 +35,8 @@ public class EmployeeServiceImpl implements EmployeeService {
 	}
 
 	@Override
-	public Employee updateEmployee(Employee employee) {
-		 Employee employees = empDomain.updateEmployee(employee);
+	public String updateEmployee(EmployeeModel employeeModel,UUID id) {
+		String employees = empDomain.updateEmployee(employeeModel, id);
 		return employees;
 	}
 

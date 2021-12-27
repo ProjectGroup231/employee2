@@ -11,6 +11,6 @@ public interface EmployeeService {
 	String addEmployee(EmployeeModel employeeModel);
 	List<EmployeeModel> findAllEmployee();
 	Employee deleteEmployee(UUID id);
-	Employee updateEmployee(Employee employee);
+	public String updateEmployee(EmployeeModel employeeModel,UUID id);
 	
 }

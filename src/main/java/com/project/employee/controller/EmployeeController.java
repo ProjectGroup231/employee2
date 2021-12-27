@@ -39,9 +39,9 @@ public class EmployeeController {
 		   return  employee;
 	   }
 	  
-	@RequestMapping(value ="/update", method = RequestMethod.PUT)
-	public Employee updateEmployee(@RequestBody Employee employee) {
-		Employee response = empService.updateEmployee(employee);
+	@RequestMapping(value ="/update/{id}", method = RequestMethod.PUT)
+	public String updateEmployee(@RequestBody EmployeeModel empModel ,@PathVariable UUID id) {
+		String response = empService.updateEmployee(empModel, id);
 		return response;
 		
 	}

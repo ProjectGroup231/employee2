@@ -2,6 +2,7 @@ package com.project.employee.domainImpl;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 import java.util.UUID;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -48,9 +49,17 @@ public class EmployeeDomainImpl implements EmployeeDomain {
 	}
 
 	@Override
-	public Employee updateEmployee(Employee employee) {
-		Employee employee1 = empRepo.save(employee);
-		return employee1;
+	public String updateEmployee(EmployeeModel employeeModel,UUID id) {
+		Optional<Employee> emp1 = empRepo.findById(id);
+		if(emp1.isPresent()) {
+			Employee emp=emp1.get();
+			emp.setName(employeeModel.getName());
+			emp.setAdd(employeeModel.getAdd());
+			emp.setPost(employeeModel.getPost());
+			emp.setSalary(employeeModel.getSalary());
+			empRepo.save(emp);
+		}
+		return "updated successfully";
 	}
 
 		
